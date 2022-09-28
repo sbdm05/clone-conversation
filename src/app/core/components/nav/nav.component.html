@@ -1,0 +1,21 @@
+<form [formGroup]='form'>
+    <div class="form-group">
+
+        <input formControlName='canalName' type="text" class="form-control">
+    </div>
+    <button class='btn btn-warning' (click)='addCanal()'>Ajouter un canal</button>
+</form>
+<!-- <ul>
+    <li *ngFor="let i of collection">
+        <a (click)='goToCanal(i)'>{{i.canalName}}</a>
+    </li>
+</ul> -->
+
+
+
+<div class="list-group">
+    <a (click)='goToCanal(i)' *ngFor="let i of collection" class="list-group-item list-group-item-action">
+    {{i.canalName}}
+  </a>
+
+</div>

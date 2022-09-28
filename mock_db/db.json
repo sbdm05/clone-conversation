@@ -1,0 +1,23 @@
+{
+  "messages": [
+    {
+      "canalName": "formation",
+      "id": 1,
+      "messages": [
+        {
+          "content": "fdsfd",
+          "date": null,
+          "id": null
+        }
+      ]
+    },
+    {
+      "canalName": "dsqds",
+      "id": 2
+    },
+    {
+      "canalName": "fdsfds",
+      "id": 4
+    }
+  ]
+}
