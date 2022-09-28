@@ -3,18 +3,11 @@
     <!-- utiliser ng-content pour projeter ce bouton -->
     <!-- <button (click)='onSubmit()' >Open/close</button> -->
 
-    <span (click)='onSubmit()'>
-    <ng-content
-    *ngIf='open'
-    select='.tr-btn-close'
-    ></ng-content>
 
-    <ng-content
-    *ngIf='!open'
-    select='.tr-btn-open'>
-    </ng-content>
+    <ng-content select='.tr-header'></ng-content>
 
-  </span>
+
+
 
 
 </header>

@@ -7,9 +7,10 @@ import { CanalModule } from '../canal/canal.module';
 import { FormComponent } from '../canal/components/form/form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NavComponent } from './components/nav/nav.component';
+import { WelcomeComponent } from './components/welcome/welcome.component';
 
 @NgModule({
-  declarations: [NavComponent],
+  declarations: [NavComponent, WelcomeComponent],
   imports: [CommonModule, ReactiveFormsModule],
   exports: [
     NavComponent,
