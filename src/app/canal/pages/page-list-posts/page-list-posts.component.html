@@ -1,7 +1,8 @@
 <div class='container' *ngIf='canal'>
 
     <!-- ici on affiche la liste des posts -->
-    <app-bloc-discussion [collection]='canal'></app-bloc-discussion>
+    <app-bloc-discussion [collection]='canal'>
+    </app-bloc-discussion>
     <app-form (submitted)='sendValue($event)'></app-form>
     <button class='btn btn-danger' (click)='onDelete() '>Supprimer ce canal</button>
 </div>

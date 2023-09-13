@@ -49,6 +49,8 @@ export class NavComponent implements OnInit {
   // }
 
   goToCanal(item: any) {
+    console.log(item.id)
+    // donner une nouvelle valeur à l'observable chaud
     this.canalService.currentCanal.next(item.id);
     this.router.navigate(['canal', item.id])
   }

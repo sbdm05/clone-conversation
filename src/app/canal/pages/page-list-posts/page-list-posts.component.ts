@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { CanalService } from '../../canal.service';
 
@@ -12,22 +12,16 @@ export class PageListPostsComponent implements OnInit {
   collection$!: Observable<any>;
   currentCanalId!: number;
   canal!: any;
-  constructor(private canalService: CanalService) {
+  constructor(private canalService: CanalService, private activatedRoute: ActivatedRoute, private router: Router) {
     //this.collection$ = this.canalService.getCollection();
-    // const id = Number(this.activatedRoute.snapshot.paramMap.get('id'));
-    // console.log(id);
-    // getCanalById(id)
-    // this.canalService.getCanalById(id).subscribe((canal) => {
-    //   console.log(canal, 'canal');
-    // });
+    let id: number;
 
-    this.canalService.currentCanal.subscribe((data) => {
-      console.log(data);
-      this.currentCanalId = data;
-      console.log(this.currentCanalId, 'current');
-      this.canalService.getCanalById(this.currentCanalId).subscribe((canal) => {
-        this.canal = canal;
-        console.log(this.canal.canalName);
+    this.activatedRoute.paramMap.subscribe((paramMap) => {
+      id = Number(paramMap.get('id'));
+      console.log(id);
+      this.canalService.getCanalById(id).subscribe((canal) => {
+        console.log(canal, 'canal');
+        this.canal = canal
       });
     });
   }
@@ -51,7 +45,8 @@ export class PageListPostsComponent implements OnInit {
     console.log(this.canal)
     this.canalService.deleteCanal(this.canal).subscribe((data)=>{
       console.log(data, 'inside ondelete')
-      this.canal = ''
+      this.canal = '';
+      this.router.navigate([''])
     })
   }
 }

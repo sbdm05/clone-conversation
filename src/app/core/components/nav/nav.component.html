@@ -1,21 +1,23 @@
-<form [formGroup]='form'>
+<form [formGroup]='form' class='mb-3'>
     <div class="form-group">
 
         <input formControlName='canalName' type="text" class="form-control">
     </div>
-    <button class='btn btn-warning' (click)='addCanal()'>Ajouter un canal</button>
+    <div class="d-grid gap-2">
+      <button class='btn btn-warning ' (click)='addCanal() '>Ajouter un canal</button>
+    </div>
 </form>
 <!-- <ul>
     <li *ngFor="let i of collection">
-        <a (click)='goToCanal(i)'>{{i.canalName}}</a>
+        <a (click)='goToCanal(i) '>{{i.canalName}}</a>
     </li>
 </ul> -->
 
 
 
 <div class="list-group">
-    <a (click)='goToCanal(i)' *ngFor="let i of collection" class="list-group-item list-group-item-action">
-    {{i.canalName}}
+    <a (click)='goToCanal(i) ' *ngFor="let i of collection" class="list-group-item list-group-item-action">
+    #{{i.canalName}}
   </a>
 
 </div>

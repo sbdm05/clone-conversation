@@ -1,9 +1,11 @@
 <h2>#{{collection.canalName}}</h2>
 
 <div *ngIf='collection.messages'>
+    <div class="card" *ngFor='let i of collection.messages'>
 
-    <div class="card-body" *ngFor='let i of collection.messages'>
-        {{i.date}}-{{i.content}}
+        <div class="card-body">
+            {{i.date | date:'dd MMM yyyy'}}-{{i.content}}
+        </div>
     </div>
 </div>
 <div *ngIf='!collection.messages'>Commencez une conversation</div>
